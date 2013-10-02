@@ -3,15 +3,15 @@ public class PrintPrimes {
   int RR;
   int CC;
   int WW;
-  int ORDMAX;
+  int orderMaximum;
   int listOfPrimes[];
 
-  public PrintPrimes(int numberOfPrimes, int RR, int CC, int WW, int ORDMAX) {
+  public PrintPrimes(int numberOfPrimes, int RR, int CC, int WW, int orderMaximum) {
     this.numberOfPrimes   = numberOfPrimes;
     this.RR  = RR;
     this.CC  = CC;
     this.WW  = WW;
-    this.ORDMAX = ORDMAX;
+    this.orderMaximum = orderMaximum;
     this.listOfPrimes = new int[numberOfPrimes + 1];
   }
 
@@ -35,7 +35,7 @@ public class PrintPrimes {
   private void calculateOddPrimes() {
  
 	  boolean intIsPrime;
-      int oddMultiples[] = new int[ORDMAX + 1];
+      int oddMultiples[] = new int[orderMaximum + 1];
       int currentInt = 1;
       int order = 2;
       int nextTargetSquare = 9;
