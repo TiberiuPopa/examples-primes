@@ -19,7 +19,7 @@ public class PrintPrimes {
   public static void main(String[] args) {
       PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 10, 30);
       printPrimes.calculatePrimes();
-      printPrimes.printPrimes();
+      printPrimes.displayPrimes();
   }
 
   public void calculatePrimes() {
@@ -63,7 +63,7 @@ public class PrintPrimes {
       }
     }
 
-    public void printPrimes() {
+    public void displayPrimes() {
         int PAGENUMBER = 1;
         int PAGEOFFSET = 1;
         while (PAGEOFFSET <= numberOfPrimes) {
