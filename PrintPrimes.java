@@ -38,15 +38,15 @@ public class PrintPrimes {
       int oddMultiples[] = new int[ORDMAX + 1];
       int currentInt = 1;
       int ORD = 2;
-      int currentIntSquared = 9;
+      int nextTargetSquare = 9;
 
       for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
         do {
           currentInt = currentInt + 2;
-          if (currentInt == currentIntSquared) {
+          if (currentInt == nextTargetSquare) {
         	  oddMultiples[ORD] = currentInt;
         	  ORD++;
-        	  currentIntSquared = listOfPrimes[ORD] * listOfPrimes[ORD];
+        	  nextTargetSquare = listOfPrimes[ORD] * listOfPrimes[ORD];
           }
 
           intIsPrime = true;
