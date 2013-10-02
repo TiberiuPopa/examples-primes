@@ -41,7 +41,7 @@ public class PrintPrimes {
       int ORD = 2;
       int currentIntSquared = 9;
 
-      for(int primesFoundSoFar = 1; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
+      for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
         do {
           currentInt = currentInt + 2;
           if (currentInt == currentIntSquared) {
