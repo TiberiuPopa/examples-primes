@@ -44,9 +44,9 @@ public class PrintPrimes {
         do {
           currentInt = currentInt + 2;
           if (currentInt == currentIntSquared) {
-            ORD = ORD + 1;
-            currentIntSquared = listOfPrimes[ORD] * listOfPrimes[ORD];
-            oddMultiples[ORD - 1] = currentInt;
+        	  oddMultiples[ORD] = currentInt;
+        	  ORD++;
+        	  currentIntSquared = listOfPrimes[ORD] * listOfPrimes[ORD];
           }
 
           intIsPrime = true;
