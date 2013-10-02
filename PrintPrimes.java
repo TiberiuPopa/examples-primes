@@ -37,21 +37,21 @@ public class PrintPrimes {
 	  boolean intIsPrime;
       int oddMultiples[] = new int[ORDMAX + 1];
       int currentInt = 1;
-      int ORD = 2;
+      int order = 2;
       int nextTargetSquare = 9;
 
       for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
         do {
           currentInt = currentInt + 2;
           if (currentInt == nextTargetSquare) {
-        	  oddMultiples[ORD] = currentInt;
-        	  ORD++;
-        	  nextTargetSquare = listOfPrimes[ORD] * listOfPrimes[ORD];
+        	  oddMultiples[order] = currentInt;
+        	  order++;
+        	  nextTargetSquare = listOfPrimes[order] * listOfPrimes[order];
           }
 
           intIsPrime = true;
           
-          for (int i = 2; i < ORD && intIsPrime; i++) {
+          for (int i = 2; i < order && intIsPrime; i++) {
             while (oddMultiples[i] < currentInt)
             	oddMultiples[i] = oddMultiples[i] + listOfPrimes[i] + listOfPrimes[i];
             if (oddMultiples[i] == currentInt)
