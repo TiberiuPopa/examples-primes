@@ -33,10 +33,9 @@ public class PrintPrimes {
   }
 
   private void calculateOddPrimes() {
-      boolean intIsPrime;
-      int N;
+ 
+	  boolean intIsPrime;
       int MULT[] = new int[ORDMAX + 1];
-
       int currentInt = 1;
       int ORD = 2;
       int currentIntSquared = 9;
@@ -49,15 +48,16 @@ public class PrintPrimes {
             currentIntSquared = listOfPrimes[ORD] * listOfPrimes[ORD];
             MULT[ORD - 1] = currentInt;
           }
-          N = 2;
+
           intIsPrime = true;
-          while (N < ORD && intIsPrime) {
-            while (MULT[N] < currentInt)
-              MULT[N] = MULT[N] + listOfPrimes[N] + listOfPrimes[N];
-            if (MULT[N] == currentInt)
+          
+          for (int i = 2; i < ORD && intIsPrime; i++) {
+            while (MULT[i] < currentInt)
+              MULT[i] = MULT[i] + listOfPrimes[i] + listOfPrimes[i];
+            if (MULT[i] == currentInt)
               intIsPrime = false;
-            N = N + 1;
           }
+          
         } while (!intIsPrime);
         listOfPrimes[primesFoundSoFar] = currentInt;
       }
