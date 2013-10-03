@@ -2,7 +2,6 @@ public class PrintPrimes {
   int numberOfPrimes;
   int RR;
   int CC;
-  int WW;
   int orderMaximum;
   int listOfPrimes[];
 
@@ -10,7 +9,6 @@ public class PrintPrimes {
     this.numberOfPrimes   = numberOfPrimes;
     this.RR  = RR;
     this.CC  = CC;
-    this.WW  = WW;
     this.orderMaximum = orderMaximum;
     this.listOfPrimes = new int[numberOfPrimes + 1];
   }
