@@ -2,14 +2,12 @@ public class PrintPrimes {
   int numberOfPrimes;
   int resultsPerColumn;
   int columnsPerPage;
-  int orderMaximum;
   int listOfPrimes[];
 
-  public PrintPrimes(int numberOfPrimes, int resultsPerColumn, int columnsPerPage, int orderMaximum) {
+  public PrintPrimes(int numberOfPrimes, int resultsPerColumn, int columnsPerPage) {
     this.numberOfPrimes   = numberOfPrimes;
     this.resultsPerColumn  = resultsPerColumn;
     this.columnsPerPage  = columnsPerPage;
-    this.orderMaximum = orderMaximum;
     this.listOfPrimes = new int[numberOfPrimes + 1];
   }
 
@@ -26,7 +24,7 @@ public class PrintPrimes {
   private void calculateOddPrimes() {
  
 	  boolean intIsPrime;
-      int oddMultiples[] = new int[orderMaximum + 1];
+      int oddMultiples[] = new int[numberOfPrimes/10];
       int currentInt = 1;
       int multiplesIndex = 2;
       int nextTargetSquare = 9;
@@ -74,7 +72,7 @@ public class PrintPrimes {
     }
     
     public static void main(String[] args) {
-      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 30);
+      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4);
       printPrimes.calculatePrimes();
       printPrimes.displayPrimes();
   }
