@@ -13,13 +13,6 @@ public class PrintPrimes {
     this.listOfPrimes = new int[numberOfPrimes + 1];
   }
 
-
-  public static void main(String[] args) {
-      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 10, 30);
-      printPrimes.calculatePrimes();
-      printPrimes.displayPrimes();
-  }
-
   public void calculatePrimes() {
       /* Two is the only even prime. All other prime numbers are odd.
        * To simplify the code, we simply add 2 as a prime number, and
@@ -79,6 +72,12 @@ public class PrintPrimes {
           pageOffset = pageOffset + RR * CC;
         }
     }
+    
+    public static void main(String[] args) {
+      PrintPrimes printPrimes = new PrintPrimes(300, 50, 4, 10, 30);
+      printPrimes.calculatePrimes();
+      printPrimes.displayPrimes();
+  }
 }
 
 					 
