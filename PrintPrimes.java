@@ -32,7 +32,8 @@ public class PrintPrimes {
       for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
         do {
           currentInt = currentInt + 2;		// Check next odd integer
-          if (currentInt == nextTargetSquare) {	// If reaching the previously computed target square, note this number as an odd multiple
+          if (currentInt == nextTargetSquare) {	/* If reaching the previously computed targeted square,
+          					 note this number as an odd multiple */
         	  oddMultiples[multiplesIndex] = currentInt;
         	  multiplesIndex++;
         	  nextTargetSquare = listOfPrimes[multiplesIndex] * listOfPrimes[multiplesIndex];
@@ -42,9 +43,11 @@ public class PrintPrimes {
           intIsPrime = true;		// First declare the integer to be prime, then try to disprove this
           
           for (int i = 2; i < multiplesIndex && intIsPrime; i++) {
-            while (oddMultiples[i] < currentInt)	// Add all multiples and primes to see if the evaluated integer is a multiple
+            while (oddMultiples[i] < currentInt)	/* Add all multiples and primes to see
+            						 if the evaluated integer is a multiple */
             	oddMultiples[i] = oddMultiples[i] + listOfPrimes[i] + listOfPrimes[i];
-            if (oddMultiples[i] == currentInt)		// The evaluated integer is a multiple if any addition gives exactly itself
+            if (oddMultiples[i] == currentInt)		/* The evaluated integer is a multiple if
+            						 any addition gives exactly itself */
               intIsPrime = false;			// A multiple is not a prime, so reject this integer
           }
           
