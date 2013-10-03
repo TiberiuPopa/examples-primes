@@ -31,20 +31,20 @@ public class PrintPrimes {
 
       for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
         do {
-          currentInt = currentInt + 2;
-          if (currentInt == nextTargetSquare) {
+          currentInt = currentInt + 2;		// Check next odd integer, is it a prime or a multiple?
+          if (currentInt == nextTargetSquare) {	// If we have reached the previously computed targetted square, remember this integer as an odd multiple
         	  oddMultiples[multiplesIndex] = currentInt;
         	  multiplesIndex++;
-        	  nextTargetSquare = listOfPrimes[multiplesIndex] * listOfPrimes[multiplesIndex];
+        	  nextTargetSquare = listOfPrimes[multiplesIndex] * listOfPrimes[multiplesIndex];	// Compute this integer's square as the next target
           }
 
-          intIsPrime = true;
+          intIsPrime = true;		// First declare the integer to be prime, then try to disprove this
           
           for (int i = 2; i < multiplesIndex && intIsPrime; i++) {
-            while (oddMultiples[i] < currentInt)
+            while (oddMultiples[i] < currentInt)	// Add all multiples and primes to see if the evaluated integer is a multiple
             	oddMultiples[i] = oddMultiples[i] + listOfPrimes[i] + listOfPrimes[i];
-            if (oddMultiples[i] == currentInt)
-              intIsPrime = false;
+            if (oddMultiples[i] == currentInt)		// The evaluated integer is a multiple if the additions give exactly itself
+              intIsPrime = false;			// A multiple is not a prime, so reject this integer
           }
           
         } while (!intIsPrime);
