@@ -45,7 +45,7 @@ public class PrintPrimes {
           for (int i = 2; i < multiplesIndex && intIsPrime; i++) {
             while (oddMultiples[i] < currentInt)	/* Add all multiples and primes to see
             						 if the evaluated integer is a multiple */
-            	oddMultiples[i] = oddMultiples[i] + listOfPrimes[i] + listOfPrimes[i];
+            	oddMultiples[i] = oddMultiples[i] + 2*listOfPrimes[i];
             if (oddMultiples[i] == currentInt)		/* The evaluated integer is a multiple if
             						 any addition gives exactly itself */
               intIsPrime = false;			// A multiple is not a prime, so reject this integer
