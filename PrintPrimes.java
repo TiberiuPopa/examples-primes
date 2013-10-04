@@ -3,7 +3,7 @@ public class PrintPrimes {
   int resultsPerColumn;
   int columnsPerPage;
   int listOfPrimes[];
-
+ 
   public PrintPrimes(int numberOfPrimes, int resultsPerColumn, int columnsPerPage) {
     this.numberOfPrimes   = numberOfPrimes;
     this.resultsPerColumn  = resultsPerColumn;
