@@ -24,7 +24,7 @@ public class PrintPrimes {
   private void calculateOddPrimes() {
  
 	  boolean intIsPrime;
-      int oddMultiples[] = new int[numberOfPrimes/10];
+      int oddMultiples[] = new int[numberOfPrimes/10 + 1];
       int currentInt = 1;
       int multiplesIndex = 2;
       int nextTargetSquare = 9;
