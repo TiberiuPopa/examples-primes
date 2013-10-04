@@ -26,7 +26,7 @@ public class PrintPrimes {
 	  boolean intIsPrime;
       int oddMultiples[] = new int[numberOfPrimes/10 + 1];
       int currentInt = 1;
-      int multiplesIndex = 2;
+      int arrayIndex = 2;
       int nextTargetSquare = 9;
 
       for(int primesFoundSoFar = 2; primesFoundSoFar <= numberOfPrimes; primesFoundSoFar++) {
@@ -34,15 +34,15 @@ public class PrintPrimes {
           currentInt = currentInt + 2;		// Check next odd integer
           if (currentInt == nextTargetSquare) {	/* If reaching the previously computed targeted square,
           					 note this number as an odd multiple */
-        	  oddMultiples[multiplesIndex] = currentInt;
-        	  multiplesIndex++;
-        	  nextTargetSquare = listOfPrimes[multiplesIndex] * listOfPrimes[multiplesIndex];
+        	  oddMultiples[arrayIndex] = currentInt;
+        	  arrayIndex++;
+        	  nextTargetSquare = listOfPrimes[arrayIndex] * listOfPrimes[arrayIndex];
         	  	// Compute this integer's square, as the next target
           }
 
           intIsPrime = true;		// First declare the integer to be prime, then try to disprove this
           
-          for (int i = 2; i < multiplesIndex && intIsPrime; i++) {
+          for (int i = 2; i < arrayIndex && intIsPrime; i++) {
             while (oddMultiples[i] < currentInt)	/* Add all multiples and primes to see
             						 if the evaluated integer is a multiple */
             	oddMultiples[i] = oddMultiples[i] + 2*listOfPrimes[i];
